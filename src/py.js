@@ -9,8 +9,13 @@ const pythonUtils = {
 	},
 
 	exec: function (fpath) {
-		var python = spawn("py", [fpath])
+		var python = spawn("py", [fpath, "C:/Users/csel-pc05/Desktop/dataset/Barkhorn/Barkhorn0.jpg"]);
 		python.stdout.on('data', function (data) {
+			data = (new TextDecoder).decode(data);
+			mainWindow.webContents.send("py_return", data);
+		});
+
+		python.stderr.on('data', function(data){
 			data = (new TextDecoder).decode(data);
 			mainWindow.webContents.send("py_return", data);
 		});

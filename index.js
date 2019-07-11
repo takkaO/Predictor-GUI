@@ -5,7 +5,7 @@ const remote = window.remote;
 //var spawn = remote.require("child_process").spawn;
 //var python = spawn("py", ['./test.py'])
 
-var python = remote.require("./py.js")
+var python = remote.require("./src/py.js")
 const hoge = document.getElementById("test_btn")
 
 
@@ -16,7 +16,7 @@ ipcRenderer.on("py_return", function (evt, msg) {
 
 
 hoge.addEventListener("click", function(){
-	python.exec("./test.py")
+	python.exec("./src/predictor.py")
 });
 
 window.addEventListener("load", function () {
