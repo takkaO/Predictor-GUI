@@ -7,6 +7,7 @@ function initRendererNodejs(){
 	global.isElectron = true;
 	global.ipcRenderer = electron.ipcRenderer;
 	global.remote = electron.remote;
+	global.projectDirectory = __dirname;
 	// also OK
 	//window.isElectron = true;
 	//window.ipcRenderer = ipcRenderer;

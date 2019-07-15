@@ -3,7 +3,34 @@
 const { app, BrowserWindow, ipcMain } = require("electron");
 
 var mainWindow = null;
+var preferenceWindow = null;
 
+ipcMain.on("create_preference_window", function(){
+	if (preferenceWindow === null){
+		createPreferenceWindow();
+	}
+});
+
+function createPreferenceWindow(){
+	preferenceWindow = new BrowserWindow({
+		width: 400,
+		height: 300,
+		parent: mainWindow,
+		modal: true,
+		webPreferences: { 
+			nodeIntegration: false,   // レンダ側でもNodejsのAPIを使用するか否か
+			contextIsolation: false,  // レンダとメインのglobal（window）を分離するか否か
+			preload: __dirname + "/preload.js",
+		}
+	});
+
+	preferenceWindow.loadFile(__dirname + "/src/preference.html");
+	preferenceWindow.webContents.openDevTools();
+
+	preferenceWindow.on('closed', function () {
+		preferenceWindow = null;
+	});
+};
 
 function createWindow() {
 	mainWindow = new BrowserWindow({

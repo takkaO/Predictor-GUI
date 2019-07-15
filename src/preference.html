@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+	<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title> Preference </title>
+
+		<!-- Bootstrapの読み込み -->
+		<script>
+			var sc = document.createElement('script');
+			sc.src = window.projectDirectory + "/scripts/jquery.js";
+			sc.setAttribute("type", "text/javascript");
+			document.head.appendChild(sc);
+		</script>
+		<script type="text/javascript" src="./scripts/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+
+		<!-- ユーザCSSの読み込み -->
+		<link rel="stylesheet" type="text/css" href="../css/index.css">
+		
+		<!-- コンテンツ・セキュリティ・ポリシーを設定 
+		<meta http-equiv="Content-Security-Policy" content="default-src 'self';
+			img-src 'self' data: image/svg+xml;"> -->
+	</head>
+
+	<body>
+		<div class="test_title">
+			<h2> Preference </h2>
+		</div>
+
+		<button id="test_btn">TEST BTN</button>
+
+		<script>
+			var sc = document.createElement('script');
+			sc.src = window.projectDirectory + "/src/preference.js"; //関数などで処理したものでもOK
+			document.body.appendChild(sc);
+		</script>
+	</body>
+
+	</html>
