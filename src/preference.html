@@ -9,14 +9,29 @@
 		<script>
 			var sc = document.createElement('script');
 			sc.src = window.projectDirectory + "/scripts/jquery.js";
-			sc.setAttribute("type", "text/javascript");
+			sc.type = "text/javascript";
 			document.head.appendChild(sc);
+
+			sc.src = window.projectDirectory + "/scripts/bootstrap.min.js";
+			sc.type = "text/javascript";
+			document.head.appendChild(sc);
+
+			var link = document.createElement("link");
+			link.href = window.projectDirectory + "/css/bootstrap.min.css";
+			link.rel = "stylesheet";
+			link.type = "text/css";
+			document.head.appendChild(link);
 		</script>
-		<script type="text/javascript" src="./scripts/bootstrap.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+
 
 		<!-- ユーザCSSの読み込み -->
-		<link rel="stylesheet" type="text/css" href="../css/index.css">
+		<script>
+			var link = document.createElement("link");
+			link.href = window.projectDirectory + "/css/preference.css";
+			link.rel = "stylesheet";
+			link.type = "text/css";
+			document.head.appendChild(link);
+		</script>
 		
 		<!-- コンテンツ・セキュリティ・ポリシーを設定 
 		<meta http-equiv="Content-Security-Policy" content="default-src 'self';
@@ -28,8 +43,35 @@
 			<h2> Preference </h2>
 		</div>
 
-		<button id="test_btn">TEST BTN</button>
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+			  <span class="input-group-text" id="basic-addon1">Command</span>
+			</div>
+			<input id="command" type="text" class="form-control" placeholder="python script command" aria-label="Username" aria-describedby="basic-addon1">
+		</div>
 
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<span class="input-group-text" id="basic-addon1">Predictor</span>
+			</div>
+			<input id="predictor" type="text" class="form-control" placeholder="predictor file path" aria-label="Recipient's username" aria-describedby="basic-addon2">
+			<div class="input-group-append">
+			  <button class="btn btn-outline-secondary" type="button">...</button>
+			</div>
+		</div>
+
+		<div class="input-group mb-3">
+			<div class="input-group-prepend">
+				<span class="input-group-text" id="basic-addon1">Model</span>
+			</div>
+			<input id="model" type="text" class="form-control" placeholder="model file path" aria-label="Recipient's username" aria-describedby="basic-addon2">
+			<div class="input-group-append">
+				<button class="btn btn-outline-secondary" type="button">...</button>
+			</div>
+		</div>
+
+		<button type="button" class="btn btn-primary">Save</button>
+		
 		<script>
 			var sc = document.createElement('script');
 			sc.src = window.projectDirectory + "/src/preference.js"; //関数などで処理したものでもOK

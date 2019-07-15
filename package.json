@@ -1,5 +1,5 @@
 {
-  "name": "template_app",
+  "name": "predictor-gui",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
@@ -17,7 +17,6 @@
     "child_process": "^1.0.2",
     "electron": "^5.0.6",
     "electron-packager": "^14.0.1",
-    "electron-preference": "0.0.1",
     "electron-rebuild": "^1.8.5",
     "electron-store": "^4.0.0"
   }

@@ -13,8 +13,8 @@ ipcMain.on("create_preference_window", function(){
 
 function createPreferenceWindow(){
 	preferenceWindow = new BrowserWindow({
-		width: 400,
-		height: 300,
+		width: 500,
+		height: 350,
 		parent: mainWindow,
 		modal: true,
 		webPreferences: { 
@@ -25,7 +25,7 @@ function createPreferenceWindow(){
 	});
 
 	preferenceWindow.loadFile(__dirname + "/src/preference.html");
-	preferenceWindow.webContents.openDevTools();
+	//preferenceWindow.webContents.openDevTools();
 
 	preferenceWindow.on('closed', function () {
 		preferenceWindow = null;

@@ -6,12 +6,32 @@
 		<title> Electron App Template </title>
 
 		<!-- Bootstrapの読み込み -->
-		<script type="text/javascript" src="./scripts/jquery.js"></script>
-		<script type="text/javascript" src="./scripts/bootstrap.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+		<script>
+			var sc = document.createElement('script');
+			sc.src = window.projectDirectory + "/scripts/jquery.js";
+			sc.type = "text/javascript";
+			document.head.appendChild(sc);
+
+			sc.src = window.projectDirectory + "/scripts/bootstrap.min.js";
+			sc.type = "text/javascript";
+			document.head.appendChild(sc);
+
+			var link = document.createElement("link");
+			link.href = window.projectDirectory + "/css/bootstrap.min.css";
+			link.rel = "stylesheet";
+			link.type = "text/css";
+			document.head.appendChild(link);
+		</script>
+
 
 		<!-- ユーザCSSの読み込み -->
-		<link rel="stylesheet" type="text/css" href="./css/index.css">
+		<script>
+			var link = document.createElement("link");
+			link.href = window.projectDirectory + "/css/index.css";
+			link.rel = "stylesheet";
+			link.type = "text/css";
+			document.head.appendChild(link);
+		</script>
 		
 		<!-- コンテンツ・セキュリティ・ポリシーを設定 -->
 		<meta http-equiv="Content-Security-Policy" content="default-src 'self';

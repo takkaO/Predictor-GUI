@@ -16,10 +16,8 @@ function initializePreferenceFile(){
 	}
 
 	store.set("command", "py");
-	store.set("predictor_py", "");
+	store.set("predictor", "");
 	store.set("model", "");
-	store.set("predictor_exe", "");
-	store.set("use_exe", "False");
 };
 
 ipcRenderer.on("py_return", function (evt, msg) {
@@ -37,6 +35,6 @@ window.addEventListener("load", function () {
 		console.log("OK");
 		//store.set("command", "py");
 		initializePreferenceFile();
-		store.clear();
+		//store.clear();
 	}
 });
