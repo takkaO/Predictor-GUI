@@ -7,7 +7,7 @@ General-purpose GUI classifier execution program.
 The default classifier is the character estimation of the 501st Joint fighter wing (Strike Witches).  
 The extension supports "jpeg / jpg, png, bmp".
 
-
+![main view](https://raw.githubusercontent.com/takkaO/Predictor-GUI/image/image.png "Main View")
 
 ## Require
 - Node.js
