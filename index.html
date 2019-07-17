@@ -3,7 +3,7 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<title> Electron App Template </title>
+		<title> Predictor-GUI </title>
 
 		<!-- Bootstrapの読み込み -->
 		<script>
@@ -32,18 +32,30 @@
 			link.type = "text/css";
 			document.head.appendChild(link);
 		</script>
+		<script>
+			var link = document.createElement("link");
+			link.href = window.projectDirectory + "/css/loading.css";
+			link.rel = "stylesheet";
+			link.type = "text/css";
+			document.head.appendChild(link);
+		</script>
 		
 		<!-- コンテンツ・セキュリティ・ポリシーを設定 -->
 		<meta http-equiv="Content-Security-Policy" content="default-src 'self';
-			img-src 'self' data: image/svg+xml;">
+			img-src 'self' https://placehold.jp data: image/svg+xml;">
 	</head>
 
 	<body>
-		<div class="test_title">
-			<h2> Display Application </h2>
+		<div id="dropzone">
+			<img id="canvas" src="https://placehold.jp/200x200.png?text=Drop Here!" alt="Drop Here!" class="img-thumbnail">
 		</div>
 
-		<button id="test_btn">TEST BTN</button>
+		<div id=result_panel>
+			<h4 id=result></h4>
+			<div id=loading class="loader">Loading...</div>
+		</div>
+
+		<button id="predict_btn" type="button" class="btn btn-info">Predict !</button>
 
 		<script defer src="index.js"></script>
 	</body>

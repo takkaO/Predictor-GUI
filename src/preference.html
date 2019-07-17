@@ -33,44 +33,53 @@
 			document.head.appendChild(link);
 		</script>
 		
-		<!-- コンテンツ・セキュリティ・ポリシーを設定 
+		<!-- コンテンツ・セキュリティ・ポリシーを設定 -->
 		<meta http-equiv="Content-Security-Policy" content="default-src 'self';
-			img-src 'self' data: image/svg+xml;"> -->
+							img-src 'self' data: image/svg+xml; script-src 'self' 'unsafe-inline'">
 	</head>
 
 	<body>
-		<div class="test_title">
-			<h2> Preference </h2>
-		</div>
+		<div class="parent-panel">
+			<div class="title">
+				<h3> Preference </h3>
+			</div>
 
-		<div class="input-group mb-3">
-			<div class="input-group-prepend">
-			  <span class="input-group-text" id="basic-addon1">Command</span>
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+				<span class="input-group-text" id="basic-addon1">Command</span>
+				</div>
+				<input id="command" type="text" class="form-control" placeholder="python script command" aria-label="Username" aria-describedby="basic-addon1">
 			</div>
-			<input id="command" type="text" class="form-control" placeholder="python script command" aria-label="Username" aria-describedby="basic-addon1">
-		</div>
 
-		<div class="input-group mb-3">
-			<div class="input-group-prepend">
-				<span class="input-group-text" id="basic-addon1">Predictor</span>
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text" id="basic-addon1">Predictor</span>
+				</div>
+				<input id="predictor" type="text" class="form-control" placeholder="predictor file path" aria-label="Recipient's username" aria-describedby="basic-addon2">
+				<div class="input-group-append">
+				<button id="predictor_path" class="btn btn-outline-secondary" type="button">...</button>
+				</div>
 			</div>
-			<input id="predictor" type="text" class="form-control" placeholder="predictor file path" aria-label="Recipient's username" aria-describedby="basic-addon2">
-			<div class="input-group-append">
-			  <button class="btn btn-outline-secondary" type="button">...</button>
+
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text" id="basic-addon1">Model</span>
+				</div>
+				<input id="model" type="text" class="form-control" placeholder="model file path" aria-label="Recipient's username" aria-describedby="basic-addon2">
+				<div class="input-group-append">
+					<button id="model_path" class="btn btn-outline-secondary" type="button">...</button>
+				</div>
+			</div>
+
+			<div class="table-panel">
+				<div class="table-child">
+					<button id="reset_btn" type="button" class="btn btn-danger">Reset</button>
+				</div>
+				<div class="table-child">
+					<button id="save_btn" type="button" class="btn btn-primary save_btn">Save</button>
+				</div>
 			</div>
 		</div>
-
-		<div class="input-group mb-3">
-			<div class="input-group-prepend">
-				<span class="input-group-text" id="basic-addon1">Model</span>
-			</div>
-			<input id="model" type="text" class="form-control" placeholder="model file path" aria-label="Recipient's username" aria-describedby="basic-addon2">
-			<div class="input-group-append">
-				<button class="btn btn-outline-secondary" type="button">...</button>
-			</div>
-		</div>
-
-		<button type="button" class="btn btn-primary">Save</button>
 		
 		<script>
 			var sc = document.createElement('script');

@@ -8,16 +8,18 @@
     "start": "./node_modules/.bin/electron.cmd .",
     "set_env": "npm install --vs2015 -g windows-build-tools",
     "mybuild": "./node_modules/.bin/electron-rebuild",
-    "pack_win": "./node_modules/.bin/electron-packager . --overwrite  --asar --out=release NONAME --platform=win32 --arch=x64",
-    "pack_mac": "./node_modules/.bin/electron-packager . --overwrite --asar --out=release NONAME --platform=darwin --arch=x64"
+    "pack_win": "./node_modules/.bin/electron-packager . --overwrite  --asar --ignore='^/STPN' --out=release PredictorGUI --platform=win32 --arch=x64 && copyfiles -f \"./STPN/*.*\" \"./release/PredictorGUI-win32-x64/STPN\""
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "child_process": "^1.0.2",
-    "electron": "^5.0.6",
-    "electron-packager": "^14.0.1",
-    "electron-rebuild": "^1.8.5",
     "electron-store": "^4.0.0"
+  },
+  "devDependencies": {
+	"copyfiles": "^2.1.1",
+	"electron": "^5.0.6",
+	"electron-packager": "^14.0.1",
+	"electron-rebuild": "^1.8.5"
   }
 }
